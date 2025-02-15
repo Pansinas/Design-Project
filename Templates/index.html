@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Statement Analyzer</title>
+</head>
+<body>
+    <h1>Upload Your Bank Statement (PDF)</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Analyze</button>
+    </form>
+    
+    {% if chart_path %}
+        <h2>Spending Breakdown</h2>
+        <img src="{{ chart_path }}" alt="Spending Pie Chart">
+        <h2>Transaction Details</h2>
+        {{ table|safe }}
+    {% endif %}
+</body>
+</html>
