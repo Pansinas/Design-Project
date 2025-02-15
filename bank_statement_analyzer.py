@@ -56,3 +56,13 @@ def plot_spending_pie_chart(df):
     plt.title("Spending Breakdown by Category")
     plt.ylabel('')
     plt.show()
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bank Statement Analyzer is Running!"
+
+if __name__ == "__main__":
+    app.run(debug=True)
